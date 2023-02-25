@@ -45,3 +45,97 @@ You can find this dataset in kaggle or click on below link.
 
 In This Dataset 2452 audio files, with 12 male speakers and 12 Female speakers, the lexical features (vocabulary) of the utterances are kept constant by speaking only 2 statements of equal lengths in 8 different emotions by all speakers. This dataset was chosen because it consists of speech and song files classified by 247 untrained Americans to eight different emotions at two intensity levels: Calm, Happy, Sad, Angry, Fearful, Disgust, and Surprise, along with a baseline of Neutral for each actor.
 
+## Data preprocessing :
+The heart of this project lies in preprocessing audio files. If you are able to do it . 70 % of project is already done. We take benefit of two packages which makes our task easier. - LibROSA - for processing and extracting features from the audio file. - soundfile - to read and write audio files in the storage.
+
+The main story in preprocessing audio files is to extract features from them.
+
+Features supported:
+
++ MFCC (mfcc)
+- Chroma (chroma)
+/ MEL Spectrogram Frequency (mel)
+* Contrast (contrast)
+- Tonnetz (tonnetz)
+In this project, code related to preprocessing the dataset is written in two functions.
+
+- load_data()
++ extract_features()
+
+
+load_data() is used to traverse every file in a directory and we extract features from them and we prepare input and output data for mapping and feed to machine learning algorithms. and finally, we split the dataset into 80% training and 20% testing.
+
+```ruby
+def load_data(test_size=0.2):
+  X, y = [], []
+  try :
+    for file in glob.glob("/content/drive/My Drive/wav/Actor_*/*.wav"):
+          # get the base name of the audio file
+        basename = os.path.basename(file)
+        print(basename)
+          # get the emotion label
+        emotion = int2emotion[basename.split("-")[2]]
+          # we allow only AVAILABLE_EMOTIONS we set
+        if emotion not in AVAILABLE_EMOTIONS:
+              continue
+          # extract speech features
+        features = extract_feature(file, mfcc=True, chroma=True, mel=True)
+          # add to data
+        X.append(features)
+        y.append(emotion)
+  except :
+       pass
+    # split the data to training and testing and return it
+  return train_test_split(np.array(X), y, test_size=test_size, random_state=7)
+  ```
+  Below is the code snippet to extract features from each file.
+  ```ruby
+  
+def extract_feature(file_name, **kwargs):
+  """
+  Extract feature from audio file `file_name`
+      Features supported:
+          - MFCC (mfcc)
+          - Chroma (chroma)
+          - MEL Spectrogram Frequency (mel)
+          - Contrast (contrast)
+          - Tonnetz (tonnetz)
+      e.g:
+      `features = extract_feature(path, mel=True, mfcc=True)`
+  """
+  mfcc = kwargs.get("mfcc")
+  chroma = kwargs.get("chroma")
+  mel = kwargs.get("mel")
+  contrast = kwargs.get("contrast")
+  tonnetz = kwargs.get("tonnetz")
+  with soundfile.SoundFile(file_name) as sound_file:
+      X = sound_file.read(dtype="float32")
+      sample_rate = sound_file.samplerate
+      if chroma or contrast:
+          stft = np.abs(librosa.stft(X))
+      result = np.array([])
+      if mfcc:
+          mfccs = np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=40).T, axis=0)
+          result = np.hstack((result, mfccs))
+      if chroma:
+          chroma = np.mean(librosa.feature.chroma_stft(S=stft, sr=sample_rate).T,axis=0)
+          result = np.hstack((result, chroma))
+      if mel:
+          mel = np.mean(librosa.feature.melspectrogram(X, sr=sample_rate).T,axis=0)
+          result = np.hstack((result, mel))
+      if contrast:
+          contrast = np.mean(librosa.feature.spectral_contrast(S=stft, sr=sample_rate).T,axis=0)
+          result = np.hstack((result, contrast))
+      if tonnetz:
+          tonnetz = np.mean(librosa.feature.tonnetz(y=librosa.effects.harmonic(X), sr=sample_rate).T,axis=0)
+          result = np.hstack((result, tonnetz))
+  return result
+ ```
+ Remaining drive further into the project ...
+ 
+## Training and Analysis:
+Traditional Machine Learning Models
+
+Performs different traditional algorithms such as -Decision Tree, SVM, Random forest .
+
+Refer
