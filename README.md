@@ -3,8 +3,8 @@
 
 ![Speech-Emotion-Recognition-System](https://user-images.githubusercontent.com/84222697/221345257-de8e65d0-e9bb-46d0-b962-daa7d947a631.png)
 
-Overview:
-Speech Emotion Recognition (SER) is a field of study that focuses on developing algorithms and models to recognize emotions from speech signals. The use of Machine Learning (ML) techniques has become increasingly popular in SER due to their ability to extract useful features from speech signals and classify emotions accurately. In this Project, MLP (Multi-Layer Perceptron) is a type of artificial neural network commonly used in ML for classification tasks.
+Overview:-
+         Speech Emotion Recognition (SER) is a field of study that focuses on developing algorithms and models to recognize emotions from speech signals. The use of Machine Learning (ML) techniques has become increasingly popular in SER due to their ability to extract useful features from speech signals and classify emotions accurately. In this Project, MLP (Multi-Layer Perceptron) is a type of artificial neural network commonly used in ML for classification tasks.
 
 The "Speech Emotion Recognition Using MLP Classifier in Machine Learning" presents an overview of the SER system using MLP classifiers. The proposed system includes preprocessing of speech signals, feature extraction, and classification using MLP classifiers. The study suggests that the proposed MLP-based classification system can achieve high accuracy in recognizing emotions from speech signals.
 
