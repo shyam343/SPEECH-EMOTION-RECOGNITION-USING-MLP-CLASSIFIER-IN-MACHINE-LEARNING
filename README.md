@@ -138,4 +138,18 @@ Traditional Machine Learning Models
 
 Performs different traditional algorithms such as -Decision Tree, SVM, Random forest .
 
-Refer
+Project Code:-
+
+[Speech Emotion Recognition using CNN](https://github.com/shyam343/SPEECH-EMOTION-RECOGNITION-USING-MLP-CLASSIFIER-IN-MACHINE-LEARNING/blob/main/Speech%20Emotion%20Recognition%20using%20CNN.ipynb)
+
+##  Conclusion and Analysis :
+
++  Speech Emotion Recognition using MLP Classifier in Machine Learning requires careful attention to the quality of the labeled dataset, preprocessing methods, feature extraction techniques, and optimization of hyperparameters.
+-  The demand for accurate and reliable speech emotion recognition systems is likely to continue to grow in the future, with applications in emotional health monitoring, voice-based personal assistants, and human-robot interactions.
+
+*  Advanced techniques such as deep neural networks and combining multiple classifiers can improve the performance of Speech Emotion Recognition systems and should be explored by researchers and practitioners.
+
+#  The Accuracy of Our Project is 81 %.
+
+##### Hope You all Get Idea How The SPEECH-EMOTION-RECOGNITION-USING-MLP-CLASSIFIER-IN-MACHINE-LEARNING Working.
+# THANKS YOU!
