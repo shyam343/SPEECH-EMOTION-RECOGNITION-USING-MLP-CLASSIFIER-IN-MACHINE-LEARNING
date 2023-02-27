@@ -121,8 +121,16 @@ Waveform.
 
 ######  Spectrogram
 ![2spectrom](https://user-images.githubusercontent.com/84222697/221512802-c46d575b-f889-4aeb-a8d2-00e45ccaf7e8.png)
+##  Feature Extraction From Audio File.
+The next step involves extracting the features from the audio files which will help our model learn between these audio files. For feature extraction we make use of the [Librosa](https://librosa.org/doc/latest/index.html) library in python which is one of the libraries used for audio analysis.
+ ![feature extraction](https://user-images.githubusercontent.com/84222697/221514130-cea2d013-41cb-4797-b707-48cabea018e0.png)
++ Here there are some things to note. While extracting the features, all the audio files have been timed for 3 seconds to get equal number of features.
+- The sampling rate of each file is doubled keeping sampling frequency constant to get more features which will help classify the audio file when the size of dataset is small.
 
- 
+
+#####    The extracted features looks as follows:-
+![feature2](https://user-images.githubusercontent.com/84222697/221514661-2f7ebc38-667e-4c50-9714-421430c907f8.png)
+
 ## Training and Analysis:
 Traditional Machine Learning Models
 
