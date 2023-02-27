@@ -5,26 +5,7 @@
 
 ## Overview:-
 
-Speech Emotion Recognition (SER) is a field of study that focuses on developing algorithms and models to recognize emotions from speech signals. The use of Machine Learning (ML) techniques has become increasingly popular in SER due to their ability to extract useful features from speech signals and classify emotions accurately. In this Project, MLP (Multi-Layer Perceptron) is a type of artificial neural network commonly used in ML for classification tasks.
-
-The "Speech Emotion Recognition Using MLP Classifier in Machine Learning" presents an overview of the SER system using MLP classifiers. The proposed system includes preprocessing of speech signals, feature extraction, and classification using MLP classifiers. The study suggests that the proposed MLP-based classification system can achieve high accuracy in recognizing emotions from speech signals.
-
-The paper first describes the preprocessing of speech signals, which includes several steps such as noise removal, signal normalization, and segmentation. Then, feature extraction methods such as Mel-frequency cepstral coefficients (MFCCs) and Linear Predictive Coding (LPC) are used to extract relevant features from the preprocessed speech signals. These features are then used as inputs for the MLP classifier.
-
-The MLP classifier is trained using a labeled dataset that includes speech signals and their corresponding emotional labels. The project describes the training process and the parameters used to optimize the MLP classifier's performance. The MLP classifier's output is the predicted emotion label, which is compared to the actual emotion label to measure the system's accuracy.
-
-The project concludes that MLP classifiers can achieve high accuracy in recognizing emotions from speech signals. However, the accuracy of the system depends on several factors such as the quality of the speech signal, the feature extraction methods used, and the size and quality of the labeled dataset used for training. The study suggests that future research should focus on improving the accuracy of MLP classifiers by optimizing the feature extraction methods and using larger and more diverse labeled datasets for training.
-
-##  Dependencies Libraries:-
-1. Programming language: The system can be implemented using programming languages such as Python.
-2. Libraries for speech processing: There are several libraries available for speech processing, such as PyAudio, librosa,Soundfile,numpy,sklearn,pandas, and SpeechRecognition. These libraries are used for tasks such as recording, preprocessing, and feature extraction of speech signals.
-3. Libraries for machine learning: The system requires machine learning libraries for building and training the MLP classifier. Popular machine learning libraries include scikit-learn, TensorFlow, and Keras.
-
-4. Dataset: The system requires a labeled dataset of speech signals and their corresponding emotional labels for training and testing the MLP classifier.
-
-5. Development environment: Depending on the programming language used, a suitable development environment, such as Jupyter Notebook,or Eclipse, may be required to develop and run the system.
-
-6. Hardware: The system requires a computer with suitable processing power and memory capacity to handle the speech processing and machine learning tasks. High-end CPUs or GPUs may be required for training large MLP models.
+SPEECH-EMOTION-RECOGNITION-USING-MLP-CLASSIFIER-IN-MACHINE-LEARNING is a system that uses machine learning techniques to recognize the emotional state of a speaker based on their speech. The system utilizes a Multi-Layer Perceptron (MLP) classifier to classify the emotional state of the speaker into different categories such as happy, sad, angry, etc. The system is trained on a dataset of speech samples labeled with corresponding emotions to learn patterns and features that are associated with each emotional state. Once trained, the system can accurately classify the emotional state of new speech samples, making it useful for applications such as call center monitoring, speech therapy, and psychological research.
 
 ## Project Details:
 The models which were discussed in the repository are MLP,SVM,Decision Tree,CNN,Random Forest and neural networks of mlp and CNN with different architectures.
@@ -132,6 +113,15 @@ def extract_feature(file_name, **kwargs):
   return result
  ```
  Remaining drive further into the project ...
+ 
+ ## Audio files:
+ Tested out the audio files by plotting out the waveform and a spectrogram to see the sample audio files.
+Waveform.
+![1 Wave pic](https://user-images.githubusercontent.com/84222697/221512776-51188a53-8707-4ae4-b67e-ba5f6324b037.png)
+
+######  Spectrogram
+![2spectrom](https://user-images.githubusercontent.com/84222697/221512802-c46d575b-f889-4aeb-a8d2-00e45ccaf7e8.png)
+
  
 ## Training and Analysis:
 Traditional Machine Learning Models
